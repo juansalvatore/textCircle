@@ -8,9 +8,17 @@
   		<a class="navbar-brand" href="#">TextCircle</a>
   	</div>
 	</nav>
-	<div class="container top-margin">
-		{{>editor}}
+	<div class="row top-margin">
+		<div class="col-md-6">
+			{{>editor}}
+		</div>
+		<div class="col-md-6">
+			{{>viewer}}
+		</div>
 	</div>
+	<!-- <div class="container top-margin">
+		{{>editor}}
+	</div> -->
 	<!-- {{> date_display}} -->
 
 </body>
@@ -21,4 +29,8 @@
 
 <template name="editor">
 	{{>sharejsCM docid=docid id="editor"}}
+</template>
+
+<template name="viewer">
+	preview goes over here...
 </template>
