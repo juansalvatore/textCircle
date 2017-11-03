@@ -15,7 +15,7 @@ if (Meteor.isClient){
 	// });
 
 	Template.editor.helpers({
-		docid:function(){
+		docid:function() {
 			console.log('Doc id helper:');
 			console.log(Documents.findOne());
 			var doc = Documents.findOne();
@@ -23,6 +23,13 @@ if (Meteor.isClient){
 				return doc._id;
 			} else {
 				return undefined;
+			}
+		},
+		config:function() {
+			return function(editor) {
+				editor.on("change", function(cm_editor, info){
+					console.log(cm_editor.getValue());
+				});
 			}
 		}
 	});
